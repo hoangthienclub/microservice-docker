@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router();
 
-const path = "/user";
+const path = "";
 
 const users = [
     {
@@ -38,7 +38,8 @@ const getUserDetail = (req: any, res: any, next: any) => {
     }
     res.send(userInfo);
 }
+
+router.get(`${path}/list`, getUsers)
 router.get(`${path}/:id`, getUserDetail)
-router.get(`${path}s`, getUsers)
 
 export default router;

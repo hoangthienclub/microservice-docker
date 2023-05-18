@@ -12,7 +12,7 @@ app.use(cors({
 }));
 setupLogging(app);
 
-app.use('/user', routes);
+app.use(routes);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Express + TypeScript Server");

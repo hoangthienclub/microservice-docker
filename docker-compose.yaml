@@ -1,13 +1,15 @@
 version: '3.8'
 
 services:
-  # database:
-  #   image: postgres
-  #   restart: always
-  #   environment:
-  #     - ASD=ASD
-  #   networks:
-  #     - microservice
+  database:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=microservice
+      - POSTGRES_USER=microservice
+      - POSTGRES_PASSWORD=microservice
+    networks:
+      - microservice
 
   gateway:
     image: hoangthienclub/api-gateway

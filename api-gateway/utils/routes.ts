@@ -11,7 +11,7 @@ export default [
             target: `http://${process.env.USER_SERVICE_URL}:${process.env.USER_SERVICE_PORT}`,
             changeOrigin: true,
             pathRewrite: {
-                [`^/user`]: '/user',
+                [`^/user`]: '/',
             },
         }
     },
@@ -27,7 +27,7 @@ export default [
             target: `http://${process.env.AUTH_SERVICE_URL}:${process.env.AUTH_SERVICE_PORT}`,
             changeOrigin: true,
             pathRewrite: {
-                [`^/auth`]: '/auth',
+                [`^/auth`]: '/',
             },
         }
     },

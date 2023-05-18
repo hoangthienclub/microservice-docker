@@ -17,7 +17,7 @@ setupBodyParser(app);
 setupLogging(app);
 
 
-app.use('/auth', routes);
+app.use(routes);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Express + TypeScript Server");

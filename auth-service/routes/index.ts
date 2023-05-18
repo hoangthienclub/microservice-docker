@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import constants from "../utils/constants";
 import { crypto } from "../utils/helpers";
 
-const path = "/auth";
+const path = "";
 
 const users = [
     {

@@ -16,7 +16,7 @@ const express_1 = require("express");
 const router = (0, express_1.Router)();
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const constants_1 = __importDefault(require("../utils/constants"));
-const path = "/auth";
+const path = "";
 const users = [
     {
         id: 1,
