@@ -1,12 +1,16 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import setupLogging from"./middlewares/logging";
-import routes from "./routes";
+import setupLogging from"./src/middlewares/logging";
+import routes from "./src/api/routes/user.routes";
+import dbInit from "./src/db/init";
 import cors from "cors";
 dotenv.config();
 
+
 const app: Express = express();
 const port = process.env.PORT;
+
+dbInit()
 app.use(cors({
     origin: '*'
 }));

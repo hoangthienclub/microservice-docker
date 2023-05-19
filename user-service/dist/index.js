@@ -5,13 +5,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const logging_1 = __importDefault(require("./middlewares/logging"));
-const routes_1 = __importDefault(require("./routes"));
+const logging_1 = __importDefault(require("./src/middlewares/logging"));
+const init_1 = __importDefault(require("./src/db/init"));
+const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
+console.log('thien:', process.env);
 const app = (0, express_1.default)();
 const port = process.env.PORT;
+(0, init_1.default)();
+app.use((0, cors_1.default)({
+    origin: '*'
+}));
 (0, logging_1.default)(app);
-app.use('/user', routes_1.default);
+// app.use(routes);
 app.get("/", (req, res) => {
     res.send("Express + TypeScript Server");
 });
